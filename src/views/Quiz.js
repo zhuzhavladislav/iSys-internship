@@ -15,8 +15,6 @@ export default class Quiz extends React.Component {
 
   clickYes() {
     document.getElementById(this.state.id).style.backgroundColor = '#48a044';
-    
-
     this.setState({ actions: null });
 
     if (this.state.actions[0].nextStep[0].conditions == null) {
@@ -43,7 +41,6 @@ export default class Quiz extends React.Component {
 
   clickNo() {
     document.getElementById(this.state.id).style.backgroundColor = '#cd222c';
-
     this.setState({ actions: null });
 
     if (this.state.actions[1].nextStep[0].conditions == null) {
