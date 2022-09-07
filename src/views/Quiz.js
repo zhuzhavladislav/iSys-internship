@@ -14,7 +14,10 @@ export default class Quiz extends React.Component {
   };
 
   clickYes() {
+    document.getElementById(this.state.id).style.width = '35px';
+    document.getElementById(this.state.id).style.height = '35px';
     document.getElementById(this.state.id).style.backgroundColor = '#48a044';
+
     this.setState({ actions: null });
 
     if (this.state.actions[0].nextStep[0].conditions == null) {
@@ -40,7 +43,10 @@ export default class Quiz extends React.Component {
   }
 
   clickNo() {
+    document.getElementById(this.state.id).style.width = '35px';
+    document.getElementById(this.state.id).style.height = '35px';
     document.getElementById(this.state.id).style.backgroundColor = '#cd222c';
+    
     this.setState({ actions: null });
 
     if (this.state.actions[1].nextStep[0].conditions == null) {
@@ -62,6 +68,16 @@ export default class Quiz extends React.Component {
         ...[{ id: this.state.id, result: this.state.actions[1].result }],
       ],
     });
+  }
+
+  componentDidMount(){
+    document.getElementById(this.state.id).style.width = '40px';
+    document.getElementById(this.state.id).style.height = '40px';
+  }
+
+  componentDidUpdate(){
+    document.getElementById(this.state.id).style.width = '40px';
+    document.getElementById(this.state.id).style.height = '40px';
   }
 
   render() {
