@@ -1,6 +1,6 @@
 import React from "react";
-import Line from "../components/Line";
-import QuestionCircle from "../components/QuestionCircle";
+import Line from "../components/Line/Line";
+import QuestionCircle from "../components/QuestionCircle/QuestionCircle";
 import Result from "../components/Result";
 import quiz from "../local-json/quiz.json";
 
@@ -14,9 +14,7 @@ export default class Quiz extends React.Component {
   };
 
   clickYes() {
-    document.getElementById(this.state.id).style.width = '35px';
-    document.getElementById(this.state.id).style.height = '35px';
-    document.getElementById(this.state.id).style.backgroundColor = '#48a044';
+    document.getElementById(this.state.id).style.backgroundColor = "#48a044";
 
     this.setState({ actions: null });
 
@@ -43,10 +41,8 @@ export default class Quiz extends React.Component {
   }
 
   clickNo() {
-    document.getElementById(this.state.id).style.width = '35px';
-    document.getElementById(this.state.id).style.height = '35px';
-    document.getElementById(this.state.id).style.backgroundColor = '#cd222c';
-    
+    document.getElementById(this.state.id).style.backgroundColor = "#cd222c";
+
     this.setState({ actions: null });
 
     if (this.state.actions[1].nextStep[0].conditions == null) {
@@ -70,29 +66,19 @@ export default class Quiz extends React.Component {
     });
   }
 
-  componentDidMount(){
-    document.getElementById(this.state.id).style.width = '40px';
-    document.getElementById(this.state.id).style.height = '40px';
-  }
-
-  componentDidUpdate(){
-    document.getElementById(this.state.id).style.width = '40px';
-    document.getElementById(this.state.id).style.height = '40px';
-  }
-
   render() {
     return (
       <div>
-        <div className="question-line">
-          <Line n={quiz.length} />
-          {quiz.map((circle) => (
-            <QuestionCircle id={circle.id} key={circle.id} />
-          ))}
-        </div>
+        <div className="interactiveForm">
+          <Line />
+          <div className="stepContainer">
+            {quiz.map((circle) => (
+              <QuestionCircle id={circle.id} key={circle.id} />
+            ))}
+          </div>
 
-        <div className="content" id="content">
-          <div className="contentBlock">
-            <div className="circle number-circle">{this.state.id}</div>
+          <div className="currentStepCard">
+            <div className="circle numberCircle">{this.state.id}</div>
             <h4>{this.state.title}</h4>
             {this.state.content !== "" && this.state.content !== null && (
               <p>{this.state.content}</p>

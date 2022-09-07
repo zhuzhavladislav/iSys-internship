@@ -1,0 +1,23 @@
+.circleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.questionCircle {
+  font-size: 14px;
+  width: 45px;
+  height: 45px;
+  background-color: #3998d3;
+}
+.questionCircle:active {
+  background-color: #137ec0;
+  width: 45px;
+  height: 45px;
+}
+.questionCircle:hover {
+  width: 50px;
+  height: 50px;
+}

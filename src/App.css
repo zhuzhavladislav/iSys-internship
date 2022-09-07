@@ -9,24 +9,18 @@
   padding: 0;
 }
 
-.question-line {
-  display:flex;
-  width: fit-content;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+.interactiveForm{
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 90px;
 }
 
-.question-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 45px;
-  height: 45px;
+.stepContainer {
+  display:flex;
+  width: 80%;
+  padding: 20px 0;
+  justify-content: space-between;
 }
 
 .circle {
@@ -40,65 +34,42 @@
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.7) inset;
   transition: ease-in-out 0.2s;
 }
-.question-circle {
-  font-size: 12px;
-  width: 35px;
-  height: 35px;
-  background-color: #3998d3;
-}
-.question-circle:active {
-  background-color: #137ec0;
-  width: 45px;
-  height: 45px;
-}
-.question-circle:hover {
-  width: 40px;
-  height: 40px;
-}
 
-.line-div {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-}
-.line {
-  display: flex;
-  width: 100%;
-  height: 12px;
-  background: #137ec0;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40%;
-  margin-right: 40%;
-}
-.content h4 {
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 14px;
-}
-.content p {
-  margin-top: 10px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 14px;
-}
-.contentBlock {
+.currentStepCard {
   display: block;
   width: fit-content;
+  margin-left: 40%;
+  margin-right: 40%;
   margin-top: 20px;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   background-color: #f5f6f8;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+.currentStepCard h4 {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+.currentStepCard p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+.numberCircle {
+  width: 20px;
+  height: 20px;
+  cursor: default;
+  font-size: 10px;
+  background-color: #3998d3;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -10px;
 }
 
 .answer {
@@ -129,13 +100,4 @@
   background-color: #cd222c;
 }
 
-.number-circle {
-  width: 20px;
-  height: 20px;
-  cursor: default;
-  font-size: 10px;
-  background-color: #3998d3;
-  position: absolute;
-  margin-left: -10px;
-  margin-top: -10px;
-}
+
