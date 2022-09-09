@@ -3,9 +3,7 @@ import Quiz from "./views/Quiz";
 
 function App() {
   return (
-    <div>
       <Quiz />
-    </div>
   );
 }
 
