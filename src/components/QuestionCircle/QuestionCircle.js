@@ -1,4 +1,4 @@
-import React, { useStyles } from "react";
+import React from "react";
 import "./QuestionCircle.css";
 
 const QuestionCircle = (props) => {
