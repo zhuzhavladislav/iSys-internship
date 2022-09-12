@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Quiz.css"
 import Line from "../components/Line/Line";
 import QuestionCircle from "../components/QuestionCircle/QuestionCircle";
 import localData from "../store/localData.json";
