@@ -1,6 +1,6 @@
 import "./App.css";
 import Quiz from "./views/Quiz";
-import localData from "./store/localData.json";
+import localData from "./store/interactiveFormData.json";
 
 function App() {
   return (

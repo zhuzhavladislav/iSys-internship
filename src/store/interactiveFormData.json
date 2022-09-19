@@ -1,0 +1,114 @@
+[
+    {
+      "id": 1,
+      "title": "Проходили ли вы обучение Лин 6 сигма?",
+      "content": null,
+      "actions": [
+        {
+          "id": 1,
+          "title": "Да",
+          "result": "y",
+          "nextStep": [
+            {
+              "id": 2
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Нет",
+          "result": "n",
+          "nextStep": [
+            {
+              "id": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Есть тема для проекта?",
+      "content": null,
+      "actions": [
+        {
+          "id": 1,
+          "title": "Да",
+          "result": "y",
+          "nextStep": [
+            {
+              "id": 5
+            },
+            {
+              "id": 4,
+              "conditions": [
+                {
+                  "id": 1,
+                  "result": "n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Нет",
+          "result": "n",
+          "nextStep": [
+            {
+              "id": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Как выбрать тему проекта?",
+      "content": "<ul style='padding-left: 20px;'><li style='list-style: disc;'><div>Следует определиться с направлением проекта</div><div><a href='/Pages/6sigm-project-directions.aspx' target='_blank' style='display: 'flex'; align-items: 'center';'><span role='img' aria-label='right' class='anticon anticon-right'><svg viewBox='64 64 896 896' focusable='false' data-icon='right' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z'></path></svg></span>Направление проектов Лин 6 сигма</a></div></li><li style='list-style: disc;'><div>Изучить материалы по реализованным проектам</div><div><a href='/Pages/6sigm-realized-projects.aspx' target='_blank' style='display: 'flex'; align-items: 'center';'><span role='img' aria-label='right' class='anticon anticon-right'><svg viewBox='64 64 896 896' focusable='false' data-icon='right' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z'></path></svg></span>Материалы по реализованным проектам</a></div></li></ul><div><b>Выбрали тему?</b></div>",
+      "actions": [
+        {
+          "id": 1,
+          "title": "Да",
+          "result": "y",
+          "nextStep": [
+            {
+              "id": 5
+            },
+            {
+              "id": 4,
+              "conditions": [
+                {
+                  "id": 1,
+                  "result": "n"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Как попасть в группу обучения?",
+      "content": "<ul style='padding-left: 20px;'><li style='list-style: disc;'><div>Для запроса по обучению необходимо обратиться к ЕОЛ</div><div><a href='/Pages/faces.aspx' target='_blank' style='display: 'flex'; align-items: 'center';'><span role='img' aria-label='right' class='anticon anticon-right'><svg viewBox='64 64 896 896' focusable='false' data-icon='right' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z'></path></svg></span>В лицах (Список ЕОЛ)</a></div></li><li style='list-style: disc;'><div>Изучить материалы по базе знаний</div><div><a href='/Pages/6sigm-knowledge-base.aspx' target='_blank' style='display: 'flex'; align-items: 'center';'><span role='img' aria-label='right' class='anticon anticon-right'><svg viewBox='64 64 896 896' focusable='false' data-icon='right' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z'></path></svg></span>Материалы по базе знаний</a></div></li></ul><div><b>Готовы начать проект?</b></div>",
+      "actions": [
+        {
+          "id": 1,
+          "title": "Да",
+          "result": "y",
+          "nextStep": [
+            {
+              "id": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Как начать проект?",
+      "content": "<div>Для начала вашего проекта ознакомьтесь с информацией на портале знаний</div><div><a href='/Pages/6sigm-project-start-info.aspx' target='_blank' style='display: 'flex'; align-items: 'center';'><span role='img' aria-label='right' class='anticon anticon-right'><svg viewBox='64 64 896 896' focusable='false' data-icon='right' width='1em' height='1em' fill='currentColor' aria-hidden='true'><path d='M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z'></path></svg></span>Необходимая информация для старта</a></div>"
+    }
+  ]
+  

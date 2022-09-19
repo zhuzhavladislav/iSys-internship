@@ -12,6 +12,8 @@
   
   .stepContainer {
     display:flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     padding: 20px 0;
     justify-content: space-between;
