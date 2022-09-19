@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./Quiz.css"
 import Line from "../components/Line/Line";
 import QuestionCircle from "../components/QuestionCircle/QuestionCircle";
-import localData from "../store/localData.json";
 
-const Quiz = () => {
+const Quiz = (props) => {
   let [currentStepId, setCurrentStepId] = useState(1);
   let [userConditions] = useState([]);
-  const currentData = localData?.find((step) => step.id === currentStepId);
+  const currentData = props.localData?.find((step) => step.id === currentStepId);
 
   const stepColor = (id) => {
     if (userConditions[id]) {
@@ -43,7 +42,7 @@ const Quiz = () => {
     <div className="form">
       <Line />
       <div className="stepContainer">
-        {localData.map((step) => (
+        {props.localData.map((step) => (
           <QuestionCircle
             id={step.id}
             key={step.id}
