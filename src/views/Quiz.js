@@ -27,10 +27,8 @@ const Quiz = ({ localData }) => {
         for (var i = 0; i < action.nextStep.length; i++) {
           if (userConditions[i]) {
             if (action.nextStep[j].conditions[i]) {
-              if (
-                JSON.stringify(userConditions[i]) ===
-                JSON.stringify(action.nextStep[j].conditions[i])
-              ) {
+              const answer = userConditions?.find((answer) => answer.id === action.nextStep[j].conditions[i].id);
+              if(answer.result===action.nextStep[j].conditions[i].result){
                 setCurrentStepId(action.nextStep[j].id);
               }
             }
