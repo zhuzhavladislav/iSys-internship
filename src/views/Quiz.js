@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import "./Quiz.css"
+import "./Quiz.css";
 import Line from "../components/Line/Line";
 import QuestionCircle from "../components/QuestionCircle/QuestionCircle";
 
-const Quiz = (props) => {
+const Quiz = ({ localData }) => {
   let [currentStepId, setCurrentStepId] = useState(1);
   let [userConditions] = useState([]);
-  const currentData = props.localData?.find((step) => step.id === currentStepId);
+  const currentData = localData?.find((step) => step.id === currentStepId);
 
   const stepColor = (id) => {
-    if (userConditions[id]) {
-      if (userConditions[id].result === "y") {
+    const stepCondition = userConditions?.find((step) => step.id === id);
+    if (stepCondition) {
+      if (stepCondition.result === "y") {
         return "#48a044";
       }
       return "#cd222c";
@@ -19,18 +20,25 @@ const Quiz = (props) => {
   };
 
   const handleClick = (action) => {
-    if (!action.nextStep[0].conditions) {
-      setCurrentStepId(action.nextStep[0].id);
-    } else {
-      for (var i = 0; i < action.nextStep.length; i++) {
-        if (
-          JSON.stringify(userConditions) ===
-          JSON.stringify(action.nextStep[i].conditions)
-        ) {
-          setCurrentStepId(action.nextStep[i].id);
+    for (var j = 0; j < action.nextStep.length; j++) {
+      if (!action.nextStep[j].conditions) {
+        setCurrentStepId(action.nextStep[j].id);
+      } else {
+        for (var i = 0; i < action.nextStep.length; i++) {
+          if (userConditions[i]) {
+            if (action.nextStep[j].conditions[i]) {
+              if (
+                JSON.stringify(userConditions[i]) ===
+                JSON.stringify(action.nextStep[j].conditions[i])
+              ) {
+                setCurrentStepId(action.nextStep[j].id);
+              }
+            }
+          }
         }
       }
     }
+
     userConditions.push({ id: currentData.id, result: action.result });
   };
 
@@ -42,12 +50,12 @@ const Quiz = (props) => {
     <div className="form">
       <Line />
       <div className="stepContainer">
-        {props.localData.map((step) => (
+        {localData.map((step) => (
           <QuestionCircle
             id={step.id}
             key={step.id}
             currentStepId={currentStepId}
-            color={stepColor(step.id - 1)}
+            color={stepColor(step.id)}
           />
         ))}
       </div>
