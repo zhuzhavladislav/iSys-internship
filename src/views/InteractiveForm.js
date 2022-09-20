@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Quiz.css";
+import "./InteractiveForm.css";
 import Line from "../components/Line/Line";
 import QuestionCircle from "../components/QuestionCircle/QuestionCircle";
 
@@ -20,23 +20,30 @@ const Quiz = ({ localData }) => {
   };
 
   const handleClick = (action) => {
-    for (var j = 0; j < action.nextStep.length; j++) {
-      if (!action.nextStep[j].conditions) {
-        setCurrentStepId(action.nextStep[j].id);
+    action.nextStep.forEach((step) => {
+      //Если нет conditions
+      if (!step.conditions) {
+        setCurrentStepId(step.id);
       } else {
-        for (var i = 0; i < action.nextStep.length; i++) {
-          if (userConditions[i]) {
-            if (action.nextStep[j].conditions[i]) {
-              const answer = userConditions?.find((answer) => answer.id === action.nextStep[j].conditions[i].id);
-              if(answer.result===action.nextStep[j].conditions[i].result){
-                setCurrentStepId(action.nextStep[j].id);
-              }
-            }
+        //Если несколько conditions
+        if (step.conditions.length === userConditions.length) {
+          if (JSON.stringify(userConditions) === JSON.stringify(step.conditions)) {
+            setCurrentStepId(step.id);
           }
+        } else {
+          //Если один condition
+          userConditions.forEach((userCondition) => {
+            step.conditions.forEach((jsonCondition) => {
+              if (userCondition.id === jsonCondition.id) {
+                if (userCondition.result === jsonCondition.result) {
+                  setCurrentStepId(step.id);
+                }
+              }
+            });
+          });
         }
       }
-    }
-
+    });
     userConditions.push({ id: currentData.id, result: action.result });
   };
 

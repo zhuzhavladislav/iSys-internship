@@ -1,10 +1,10 @@
 import "./App.css";
-import Quiz from "./views/Quiz";
+import InteractiveForm from "./views/InteractiveForm";
 import localData from "./store/interactiveFormData.json";
 
 function App() {
   return (
-      <Quiz localData={localData}/>
+      <InteractiveForm localData={localData}/>
   );
 }
 
