@@ -54,7 +54,7 @@ const Quiz = ({ localData }) => {
   return (
     <div className="form">
       <Line />
-      <div className="stepContainer">
+      <div className="stepsContainer">
         {localData.map((step) => (
           <QuestionCircle
             id={step.id}
